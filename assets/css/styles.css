@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none; 
+}
+
+:root {
+  --color-blue-dark: #1A4855;
+  --color-green: #628E75;
+  --color-white: #F9F9F9;
+  --color-primary-white: #212429;
+  --color-primary-black: #FFFFFF;
+
+  --poppins: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--poppins);
+}
+
+.main-content {
+  max-width: 111rem;
+  margin: 0 auto; 
+}
+
+.main-bg {
+  background: linear-gradient(to right, #628E75, #1A4855);
+}
+
+.section {
+  min-height: 100vh; 
+}
+
+.header-flex,
+.chihiro-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7.6rem;
+}
+
+.header-img {
+  margin-top: 4.1rem;
+}
+
+.header-redes-sociais {
+  margin-top: 5.4rem;
+}
+
+.header-redes-sociais img + img {
+  margin-left: 3.2rem;
+}
+
+.grid-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rem;
+}
+
+/* Resume chihiro */
+.chihiro-resume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chihiro-resume h4,
+.chihiro-resume h1 {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+  text-transform: uppercase;
+}
+
+.chihiro-resume h1 {
+  font-size: 6.8rem;
+  line-height: 7.412rem;
+  font-weight: 900;
+  margin: 1.4rem 0 2.5rem;
+}
+
+.chihiro-resume p {
+  font-size: 1.6rem;
+  line-height: 2.88rem;
+  color: var(--color-primary-black);
+  font-weight: 400;
+  margin-bottom: 4.6rem;
+}
+
+.chihiro-buttons {
+  margin-bottom: 0;
+}
+
+.preview-here,
+.preview-trailer {
+  background: var(--color-green);
+  height: 4.5rem;
+  padding: .8rem 3.3rem;
+  transform: skew(-20deg);
+  max-width: 23.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-here img {
+  margin-right: 1rem;
+  transform: skew(20deg);
+}
+
+.preview-here button,
+.preview-trailer button {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  background: none;
+  color: var(--color-primary-black);
+  font-weight: 500;
+  transform: skew(20deg);
+  cursor: pointer;
+}
+
+.preview-here {
+  transition: background,transform 700ms ease-in-out;
+
+}
+
+.preview-trailer {
+  background: none;
+  border: 2px solid var(--color-green);
+  transition: all 700ms ease-in-out
+}
+
+.preview-here:hover {
+  transform: scale(1.05) skew(-20deg);
+  background: none;
+  border: 2px solid var(--color-white);
+}
+
+.preview-trailer:hover {
+  transform: scale(1.05) skew(-20deg);
+  background: var(--color-green);
+  border: 2px solid var(--color-white);
+}
+
+.chihiro-img {
+  max-width: 41rem;
+  background: no-repeat;
+  background-image: url('/assets/img/chihiro.svg');
+  background-position: left;
+  background-size: cover;
+  animation-name: boo;
+  animation-iteration-count: infinite;
+  animation-duration: 1200ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 100ms;
+}
+
+@keyframes boo {
+  0% {
+    margin-top: 3rem;
+    transform: scale(1.05);
+  }
+  50% {
+    margin-top: 0rem;
+    transform: scale(1);
+  }
+  100% {
+    margin-top: 3rem;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 414px) {
+  .main-content {
+    padding: 0 2.5rem 7rem;
+  }
+
+  .header-flex {
+    height: 4.9rem;
+    margin-bottom: -0.4rem;
+  }
+
+  .grid-principal {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .chihiro-resume {
+    grid-row: 2;
+    margin-top: -3rem;
+  }
+
+  .chihiro-img {
+    grid-row: 1;
+  }
+
+  .preview-trailer {
+    display: none;
+  }
+
+  .chihiro-resume h4 {
+    font-size: 18px
+  }
+
+  .chihiro-resume h1 {
+    font-size: 5.6rem;
+  }
+
+  .chihiro-resume p {
+    font-size: 1.4rem;
+  }
+
+  @keyframes boo {
+    0% {
+      margin-top: 1.5rem;
+      transform: scale(1.05);
+    }
+    50% {
+      margin-top: 0rem;
+      transform: scale(1);
+    }
+    100% {
+      margin-top: 1.5rem;
+      transform: scale(1.05);
+    }
+  }
+}
